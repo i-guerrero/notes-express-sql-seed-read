@@ -1,6 +1,5 @@
 // DEPENDENCIES
 const cors = require("cors");
-const { application } = require("express");
 const express = require("express");
 
 // CONFIGURATION
