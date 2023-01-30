@@ -9,4 +9,13 @@ const getAllBookmarks = async () => {
   }
 };
 
-module.exports = { getAllBookmarks };
+const getBookmark = async (id) => {
+  try {
+    const oneBookmark = await db.one("SELECT * FROM bookmarks WHERE id=$1", id);
+    return oneBookmark;
+  } catch (error) {
+    return error;
+  }
+};
+
+module.exports = { getAllBookmarks, getBookmark };
