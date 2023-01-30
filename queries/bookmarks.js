@@ -18,4 +18,16 @@ const getBookmark = async (id) => {
   }
 };
 
-module.exports = { getAllBookmarks, getBookmark };
+const createBookmark = async (bookmark) => {
+  try {
+    const newBookmark = await db.one(
+      "INSERT INTO bookmarks (name, url, category, is_favorite) VALUES($1, $2, $3, $4) RETURNING *",
+      [bookmark.name, bookmark.url, bookmark.category, bookmark.is_favorite]
+    );
+    return newBookmark;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = { getAllBookmarks, getBookmark, createBookmark };
