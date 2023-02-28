@@ -1,5 +1,6 @@
 const db = require("../db/dbConfig.js");
 
+// GET
 const getAllBookmarks = async () => {
   try {
     const allBookmarks = await db.any("SELECT * FROM bookmarks");
@@ -9,6 +10,7 @@ const getAllBookmarks = async () => {
   }
 };
 
+// SHOW
 const getBookmark = async (id) => {
   try {
     const oneBookmark = await db.oneOrNone(
@@ -21,6 +23,7 @@ const getBookmark = async (id) => {
   }
 };
 
+// CREATE
 const createBookmark = async (bookmark) => {
   try {
     const newBookmark = await db.one(
@@ -33,6 +36,7 @@ const createBookmark = async (bookmark) => {
   }
 };
 
+// DELETE
 const deleteBookmark = async (id) => {
   try {
     const deletedBookmark = await db.one(
@@ -45,6 +49,7 @@ const deleteBookmark = async (id) => {
   }
 };
 
+// UPDATE
 const updateBookmark = async (id, bookmark) => {
   try {
     const updatedBookmark = await db.one(
