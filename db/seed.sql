@@ -16,3 +16,25 @@ VALUES
 ('2', 'Alison', 'A lifesaver!','Helped me get my stove cleaner than I ever imagiend possible!', 4),
 ('3', 'Hannah', 'Insert Confetti Emoji Here', 'I survived 6 hours at the DMV!', 4),
 ('3', 'Gabi', 'My Friend Hannah', 'Gets a discount if I leave a positive review, so here it is', 5);
+
+INSERT INTO users (username, admin, verified)
+VALUES
+('Evan', true, true),
+('Juliana', true, true),
+('David', false, true),
+('Mr. Mingo', false, true),
+('Alison', false, true),
+('Hannah', false, true),
+('Gabi', false, true);
+
+INSERT INTO users_bookmarks (bookmark_id, user_id)
+VALUES
+(1,1),
+(2,1),
+(3,1),
+(2,2),
+(1,3),
+(2,4),
+(2,5),
+(3,6),
+(2,7);

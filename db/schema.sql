@@ -23,3 +23,18 @@ CREATE TABLE reviews (
     bookmark_id INTEGER REFERENCES bookmarks (id)
     ON DELETE CASCADE
 );
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username TEXT UNIQUE,
+    admin BOOLEAN DEFAULT false,
+    verified BOOLEAN DEFAULT false
+);
+
+DROP TABLE IF EXISTS users_bookmarks;
+
+CREATE TABLE users_bookmarks (
+    created TIMESTAMP DEFAULT NOW(),
+    bookmark_id INTEGER,
+    user_id INTEGER
+);

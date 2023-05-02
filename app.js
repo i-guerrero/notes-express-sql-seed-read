@@ -18,9 +18,9 @@ app.get("/", (req, res) => {
 const bookmarksController = require("./controllers/bookmarkController.js");
 app.use("/bookmarks", bookmarksController);
 
-// // Reviews ROUTES
-// const reviewsController = require("./controllers/reviewsController.js");
-// app.use("/reviews", reviewsController);
+// Users ROUTES
+const usersController = require("./controllers/usersController.js");
+app.use("/users", usersController);
 
 // 404 PAGE
 app.get("*", (req, res) => {
