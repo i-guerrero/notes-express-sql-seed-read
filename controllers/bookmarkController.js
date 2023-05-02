@@ -13,6 +13,9 @@ const {
   validateURL,
 } = require("../validations/checkBookmarks");
 
+const reviewsController = require("./reviewsController");
+bookmarks.use("/:bookmarkId/reviews", reviewsController);
+
 // INDEX
 bookmarks.get("/", async (req, res) => {
   const allBookmarks = await getAllBookmarks();
